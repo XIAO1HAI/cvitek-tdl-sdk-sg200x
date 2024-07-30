@@ -46,6 +46,10 @@ Cvitek 所提供的 TDL（Turnkey Deep Learning）集成算法，用以缩短应
 ## Compilation
 
 ### 1. Download toolchain
+#### toolchain(riscv64)
+>
+使用riscv64需修改cvitek-tdl-sdk-sg200x/sample/compile_sample.sh中SDK_VER为：
+SDK_VER="${SDK_VER:-musl_riscv64}"
 
 ```
 wget https://sophon-file.sophon.cn/sophon-prod-s3/drive/23/03/07/16/host-tools.tar.gz
@@ -53,6 +57,24 @@ tar xvf host-tools.tar.gz
 cd host-tools
 export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
 ```
+
+#### toolchain(arm64)
+>
+使用arm64需修改cvitek-tdl-sdk-sg200x/sample/compile_sample.sh中SDK_VER为：
+SDK_VER="${SDK_VER:-64bit}"
+
+```
+# 没有权限可以加sudo
+apt-get update
+apt-get install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+# 验证工具链是否安装成功
+# 终端输出安装目录  /usr/bin/aarch64-linux-gnu-g++即为成功
+which aarch64-linux-gnu-g++
+
+#通过以下命令查看交叉编译版本号（输出相关版本信息即为成功）
+aarch64-linux-gnu-gcc -v
+```
+
 
 ### 2. Compile cvitek-tdl-sdk
 
