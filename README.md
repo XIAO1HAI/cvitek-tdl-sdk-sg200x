@@ -48,7 +48,9 @@ Cvitek 所提供的 TDL（Turnkey Deep Learning）集成算法，用以缩短应
 ### 1. Download toolchain
 #### toolchain(riscv64)
 >
+
 使用riscv64需修改cvitek-tdl-sdk-sg200x/sample/compile_sample.sh中SDK_VER为：
+
 SDK_VER="${SDK_VER:-musl_riscv64}"
 
 ```
@@ -60,7 +62,9 @@ export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
 
 #### toolchain(arm64)
 >
+
 使用arm64需修改cvitek-tdl-sdk-sg200x/sample/compile_sample.sh中SDK_VER为：
+
 SDK_VER="${SDK_VER:-64bit}"
 
 ```
